@@ -1,6 +1,8 @@
-saldo = float(input('Olá! Você está criando uma conta no sistema bancário. Quanto gostaria de depositar? - '))
+
 contador_saque_diario = 0  # Limite de saque diário
 extrato = []  # Lista para armazenar extrato de transações
+saldo = float(input('Olá! Você está criando uma conta no sistema bancário. Quanto gostaria de depositar? - '))
+
 while True:
     escolha = input('''Escolha uma opção:
 1. Depositar novo valor
@@ -13,6 +15,7 @@ Digite sua opção: ''') # Salva a escolha do usuário
         valor_deposito = float(input('Quanto deseja depositar? '))
         if valor_deposito > 0: # Verifica se o valor do depósito é positivo
             saldo += valor_deposito
+            extrato.append(f'Depósito: +R${valor_saque:.2f}')
             print(f'Depósito realizado com sucesso! Seu novo saldo é: {saldo}')
         else:
             print('Valor de depósito inválido. Tente novamente.')
